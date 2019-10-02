@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="UWP_part1.Pages.ListSong"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_part1.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListView ItemsSource="{x:Bind MyListSong}" x:Name="MyListSong">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="0, 10, 0, 10" Orientation="Horizontal" Tapped="Chose_Song">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{x:Bind thumbnail}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind name}" Style="{ThemeResource BaseTextBlockStyle}"> Name</TextBlock>
+                            <TextBlock Text="{x:Bind singer}" Style="{ThemeResource CaptionTextBlockStyle}"> Singer</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </Grid>
+</Page>
